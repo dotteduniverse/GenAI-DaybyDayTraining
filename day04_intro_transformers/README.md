@@ -1,3 +1,11 @@
+
+---
+
+## Day 4 – Intro to Hugging Face Transformers (Load & run GPT‑2)
+
+### `day04_intro_transformers/README.md`
+
+```markdown
 # Day 4 – Intro to Hugging Face Transformers
 
 ## 🎯 Learning Objectives
@@ -6,12 +14,17 @@
 - Generate text using the `pipeline` API and low‑level model calls.
 - Explore model size and inference speed.
 
-## 📚 Concepts Covered
-- Transformers library architecture.
-- AutoModel, AutoTokenizer.
-- Pipeline abstraction for common tasks.
-- GPU vs CPU inference.
+## 📚 Detailed Concepts
 
-## 🛠️ Setup
-```bash
-pip install transformers torch
+### The Hugging Face ecosystem
+- **Transformers**: thousands of pre‑trained models (BERT, GPT, T5, Llama, etc.) with a unified API.
+- **Datasets**: easy access to hundreds of NLP datasets.
+- **Tokenizers**: fast tokenization for all models.
+- **Pipeline**: high‑level abstraction for common tasks (text generation, sentiment analysis, etc.).
+
+### Loading a model
+Two ways:
+1. **Pipeline** (simplest):
+   ```python
+   generator = pipeline("text-generation", model="gpt2")
+   output = generator("Hello", max_length=50)

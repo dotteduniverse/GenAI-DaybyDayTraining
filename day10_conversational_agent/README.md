@@ -1,20 +1,29 @@
+## Day 10 – Mini Project: Multi‑turn Conversational Agent
+
+### `day10_conversational_agent/README.md`
+
+```markdown
 # Day 10 – Mini Project: Conversational Agent with Memory
 
 ## 🎯 Learning Objectives
 - Combine LLM API calls with conversation memory.
 - Implement a chatbot that remembers previous exchanges.
 - Add a simple persona or system prompt.
+- Handle token limits by trimming history.
 
-## 📚 Concepts Covered
-- Maintaining message history.
-- Handling long conversations (trimming or summarising).
-- Basic prompt engineering for consistent persona.
+## 📚 Detailed Concepts
 
-## 🚀 Step‑by‑Step Tasks
-1. Use OpenAI (or Cohere) to create a chatbot loop.
-2. Store messages in a list and send full history each turn.
-3. Set a system message: *“You are a helpful and friendly assistant.”*
-4. Extend with a simple command to clear memory.
+### Conversation memory
+- To have a multi‑turn conversation, you must send the entire history each time.
+- The API is stateless – it does not remember past calls.
+- Store messages in a Python list:
+  ```python
+  messages = [
+      {"role": "system", "content": "You are a helpful assistant."},
+      {"role": "user", "content": "What is AI?"},
+      {"role": "assistant", "content": "AI is ..."},
+      {"role": "user", "content": "Tell me more."}
+  ]
 
 ## 📝 Exercises
 - Add a `!save` command that writes the conversation to a file.
