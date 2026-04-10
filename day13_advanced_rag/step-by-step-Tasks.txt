@@ -1,0 +1,25 @@
+🚀 Step‑by‑Step Tasks
+1. Implement multi‑query retrieval
+Generate 3 alternative queries using an LLM, retrieve for each, combine unique results.
+
+2. Implement HyDE
+For a question, ask the LLM to write a fake answer (without retrieving). Use that answer as the query for embedding search.
+
+3. Add a reranker
+After initial retrieval (top 20), use a cross‑encoder to re‑rank and keep top 3.
+
+📝 Exercises (see exercises.md)
+Compare retrieval quality (precision@5) between naive, multi‑query, and HyDE.
+
+Use Cohere Rerank API (free tier) and compare with local cross‑encoder.
+
+Implement a simple MultiQueryRetriever from LangChain.
+
+🔗 Resources
+HyDE paper: Precise Zero‑Shot Dense Retrieval without Relevance Labels
+
+LangChain multi‑query: Link
+
+Reranker guide: Hugging Face reranker
+
+Video: Advanced RAG techniques (by LlamaIndex)

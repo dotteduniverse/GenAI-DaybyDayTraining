@@ -32,4 +32,15 @@
 - Also has a chat endpoint similar to OpenAI.
 
 ### Prompting for Q&A
-To answer based on a given context, use a prompt like:
+- To answer based on a given context, use a prompt like:
+- Context: {context}
+- Question: {question}
+- Answer concisely based only on the context:
+
+### Handling long conversations (memory)
+- Store previous messages in a list and send the entire history each time.  
+- Be careful of token limits – you may need to truncate older messages.
+
+## 🛠️ Setup
+```bash
+pip install openai cohere python-dotenv
